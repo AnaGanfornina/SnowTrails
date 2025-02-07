@@ -7,4 +7,12 @@
 
 import Foundation
 
-
+func main(){
+    
+    let puntos = PointsLoader(fromData: PointData()).points
+    
+    for item in puntos {
+        print(item)
+    }
+}
+main()

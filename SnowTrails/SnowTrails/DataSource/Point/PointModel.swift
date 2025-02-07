@@ -7,12 +7,14 @@
 
 import Foundation
 
-// MARK: - Modelo para cada uno de los puntos del "JSON" o Data
+// MARK: - Modelo para cada uno de los puntos del Data
+// TODO: - Poner lo de que puedas comparar dos puntos y decir si so el mismo
 struct Point {
     
     let name: String
     let latitude: Double
     let longitude: Double
     let elevation: Double
+    // let conexions: 
     
 }
