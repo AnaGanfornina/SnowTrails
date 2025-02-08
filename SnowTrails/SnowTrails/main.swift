@@ -2,17 +2,28 @@
 //  main.swift
 //  SnowTrails
 //
-//  Created by Ana on 6/2/25.
+//  Created by Ismael Sabri Pérez on 6/2/25.
 //
 
 import Foundation
+import OSLog
 
-func main(){
+func main() {
+    App().run()
     
-    let puntos = PointsLoader(fromData: PointData()).points
+    Logger().debug("Mensaje cualquiera")
+    Logger().info("Mensaje informativo")
+    Logger().error("Mensaje de error")
+    Logger().fault("Mensaje de fallo")
     
-    for item in puntos {
-        print(item)
-    }
+    Logger.consoleUILogger.debug("Mensaje al usuario modo debug")
 }
+
 main()
+
+// MARK: Ejemplo de cómo diferenciar entre logs para el usuario y logs para el desarrollador
+extension Logger {
+    static let consoleUILogger = Logger(subsystem: "SnowTrails", category: "LogsDelUsuario")
+    static let consoleDeveloperLogger = Logger(subsystem: "SnowTrails", category: "LogsDelDesarrollador")
+}
+

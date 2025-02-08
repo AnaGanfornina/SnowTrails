@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXCopyFilesBuildPhase section */
-		A11632292D551B58000CBE57 /* CopyFiles */ = {
+		874A17A22D554DD800FA5A98 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -19,19 +19,45 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A116322B2D551B58000CBE57 /* SnowTrails */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SnowTrails; sourceTree = BUILT_PRODUCTS_DIR; };
+		874A17A42D554DD800FA5A98 /* SnowTrails */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SnowTrails; sourceTree = BUILT_PRODUCTS_DIR; };
+		874A17B62D554F6E00FA5A98 /* SnowTrailsTesting.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnowTrailsTesting.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		874A17F72D555CF900FA5A98 /* Exceptions for "SnowTrails" folder in "SnowTrailsTesting" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				MenuController.swift,
+			);
+			target = 874A17B52D554F6E00FA5A98 /* SnowTrailsTesting */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		A116322D2D551B58000CBE57 /* SnowTrails */ = {
+		874A17A62D554DD800FA5A98 /* SnowTrails */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				874A17F72D555CF900FA5A98 /* Exceptions for "SnowTrails" folder in "SnowTrailsTesting" target */,
+			);
 			path = SnowTrails;
+			sourceTree = "<group>";
+		};
+		874A17B72D554F6E00FA5A98 /* SnowTrailsTesting */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SnowTrailsTesting;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A11632282D551B58000CBE57 /* Frameworks */ = {
+		874A17A12D554DD800FA5A98 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		874A17B32D554F6E00FA5A98 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,18 +67,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A11632222D551B58000CBE57 = {
+		874A179B2D554DD800FA5A98 = {
 			isa = PBXGroup;
 			children = (
-				A116322D2D551B58000CBE57 /* SnowTrails */,
-				A116322C2D551B58000CBE57 /* Products */,
+				874A17A62D554DD800FA5A98 /* SnowTrails */,
+				874A17B72D554F6E00FA5A98 /* SnowTrailsTesting */,
+				874A17A52D554DD800FA5A98 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A116322C2D551B58000CBE57 /* Products */ = {
+		874A17A52D554DD800FA5A98 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A116322B2D551B58000CBE57 /* SnowTrails */,
+				874A17A42D554DD800FA5A98 /* SnowTrails */,
+				874A17B62D554F6E00FA5A98 /* SnowTrailsTesting.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,64 +88,107 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A116322A2D551B58000CBE57 /* SnowTrails */ = {
+		874A17A32D554DD800FA5A98 /* SnowTrails */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A11632322D551B58000CBE57 /* Build configuration list for PBXNativeTarget "SnowTrails" */;
+			buildConfigurationList = 874A17AB2D554DD800FA5A98 /* Build configuration list for PBXNativeTarget "SnowTrails" */;
 			buildPhases = (
-				A11632272D551B58000CBE57 /* Sources */,
-				A11632282D551B58000CBE57 /* Frameworks */,
-				A11632292D551B58000CBE57 /* CopyFiles */,
+				874A17A02D554DD800FA5A98 /* Sources */,
+				874A17A12D554DD800FA5A98 /* Frameworks */,
+				874A17A22D554DD800FA5A98 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				A116322D2D551B58000CBE57 /* SnowTrails */,
+				874A17A62D554DD800FA5A98 /* SnowTrails */,
 			);
 			name = SnowTrails;
 			packageProductDependencies = (
 			);
 			productName = SnowTrails;
-			productReference = A116322B2D551B58000CBE57 /* SnowTrails */;
+			productReference = 874A17A42D554DD800FA5A98 /* SnowTrails */;
 			productType = "com.apple.product-type.tool";
+		};
+		874A17B52D554F6E00FA5A98 /* SnowTrailsTesting */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 874A17BA2D554F6E00FA5A98 /* Build configuration list for PBXNativeTarget "SnowTrailsTesting" */;
+			buildPhases = (
+				874A17B22D554F6E00FA5A98 /* Sources */,
+				874A17B32D554F6E00FA5A98 /* Frameworks */,
+				874A17B42D554F6E00FA5A98 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				874A17B72D554F6E00FA5A98 /* SnowTrailsTesting */,
+			);
+			name = SnowTrailsTesting;
+			packageProductDependencies = (
+			);
+			productName = SnowTrailsTesting;
+			productReference = 874A17B62D554F6E00FA5A98 /* SnowTrailsTesting.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A11632232D551B58000CBE57 /* Project object */ = {
+		874A179C2D554DD800FA5A98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1600;
-				LastUpgradeCheck = 1600;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					A116322A2D551B58000CBE57 = {
-						CreatedOnToolsVersion = 16.0;
+					874A17A32D554DD800FA5A98 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					874A17B52D554F6E00FA5A98 = {
+						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
-			buildConfigurationList = A11632262D551B58000CBE57 /* Build configuration list for PBXProject "SnowTrails" */;
+			buildConfigurationList = 874A179F2D554DD800FA5A98 /* Build configuration list for PBXProject "SnowTrails" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = A11632222D551B58000CBE57;
+			mainGroup = 874A179B2D554DD800FA5A98;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = A116322C2D551B58000CBE57 /* Products */;
+			productRefGroup = 874A17A52D554DD800FA5A98 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A116322A2D551B58000CBE57 /* SnowTrails */,
+				874A17A32D554DD800FA5A98 /* SnowTrails */,
+				874A17B52D554F6E00FA5A98 /* SnowTrailsTesting */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		874A17B42D554F6E00FA5A98 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		A11632272D551B58000CBE57 /* Sources */ = {
+		874A17A02D554DD800FA5A98 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		874A17B22D554F6E00FA5A98 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -127,7 +198,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		A11632302D551B58000CBE57 /* Debug */ = {
+		874A17A92D554DD800FA5A98 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -180,7 +251,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -190,7 +261,7 @@
 			};
 			name = Debug;
 		};
-		A11632312D551B58000CBE57 /* Release */ = {
+		874A17AA2D554DD800FA5A98 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -237,7 +308,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -245,24 +316,48 @@
 			};
 			name = Release;
 		};
-		A11632332D551B58000CBE57 /* Debug */ = {
+		874A17AC2D554DD800FA5A98 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DRKH5MTLPD;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		A11632342D551B58000CBE57 /* Release */ = {
+		874A17AD2D554DD800FA5A98 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DRKH5MTLPD;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		874A17BB2D554F6E00FA5A98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = KeepCoding.SnowTrailsTesting;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		874A17BC2D554F6E00FA5A98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = KeepCoding.SnowTrailsTesting;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -270,25 +365,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A11632262D551B58000CBE57 /* Build configuration list for PBXProject "SnowTrails" */ = {
+		874A179F2D554DD800FA5A98 /* Build configuration list for PBXProject "SnowTrails" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A11632302D551B58000CBE57 /* Debug */,
-				A11632312D551B58000CBE57 /* Release */,
+				874A17A92D554DD800FA5A98 /* Debug */,
+				874A17AA2D554DD800FA5A98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A11632322D551B58000CBE57 /* Build configuration list for PBXNativeTarget "SnowTrails" */ = {
+		874A17AB2D554DD800FA5A98 /* Build configuration list for PBXNativeTarget "SnowTrails" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A11632332D551B58000CBE57 /* Debug */,
-				A11632342D551B58000CBE57 /* Release */,
+				874A17AC2D554DD800FA5A98 /* Debug */,
+				874A17AD2D554DD800FA5A98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		874A17BA2D554F6E00FA5A98 /* Build configuration list for PBXNativeTarget "SnowTrailsTesting" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				874A17BB2D554F6E00FA5A98 /* Debug */,
+				874A17BC2D554F6E00FA5A98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A11632232D551B58000CBE57 /* Project object */;
+	rootObject = 874A179C2D554DD800FA5A98 /* Project object */;
 }
