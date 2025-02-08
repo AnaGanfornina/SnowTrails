@@ -27,9 +27,13 @@
 		874A17F72D555CF900FA5A98 /* Exceptions for "SnowTrails" folder in "SnowTrailsTesting" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				DataSource/Conexions/ConexionsModel.swift,
 				DataSource/Point/PointData.swift,
 				DataSource/Point/PointLoader.swift,
 				DataSource/Point/PointModel.swift,
+				DataSource/Route/RouteData.swift,
+				DataSource/Route/RouteModel.swift,
+				DataSource/Route/RoutesLoader.swift,
 				MenuController.swift,
 			);
 			target = 874A17B52D554F6E00FA5A98 /* SnowTrailsTesting */;

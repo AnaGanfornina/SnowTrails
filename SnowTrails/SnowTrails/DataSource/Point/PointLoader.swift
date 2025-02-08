@@ -12,12 +12,9 @@ class PointsLoader {
     
     init(fromData data: PointData) {
         
-        // Cargamos las canciones del PointData para que estén en PointsLoader
+        // Cargamos los puntos del PointData para que estén en PointsLoader
         self.points = PointData.getPointData()
-        
-        
-        
-     
+
     }
    
     }
