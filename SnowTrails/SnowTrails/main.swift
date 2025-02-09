@@ -9,30 +9,55 @@ import Foundation
 import OSLog
 
 func main() {
-    var menuAdmin: AdminMenuController?
-    var menuUser: UserMenuController?
-    
     let menuLogin = LoginMenuController()
     menuLogin.showMenu()
+    
     //Leer opcion del usuario. Mientras la opción no sea salir, siempre hará login
-    
     var userChoice = UserChoiceController().readUserChoice()
-    //Aqui trataremos que hacer en cada caso
     
-    //Hacer login del usuario
-    let user = menuLogin.login()
+    while !isExit(input: userChoice) {
+        
+        let menuAdmin: AdminMenuController?
+        let menuUser: UserMenuController?
+        let user:User?
+        
+        
+        // Mientras la opción no sea de salida, acabaremos en un login
+        // Hacer login del usuario
+        let mailAndPassword = menuLogin.askForMailAndPassword()
+        
+        // Tratamos el error de no encontrar un usuario con esa contraseña y usuario
+        do {
+            user = try menuLogin.login(mailAndPasword: mailAndPassword)
+        }catch Errors.userNotFound {
+            user = nil
+        }catch{
+            print ("Error inserperado")
+            user = nil
+        }
+
+        switch user {
+        case is AdminUser:
+            print("Ha entrado como admin")
+            menuAdmin = AdminMenuController()
+            menuAdmin?.showMenu()
+            
+        case is RegularUser:
+            print("Ha entrado como user")
+            menuUser = UserMenuController()
+            menuUser?.showMenu()
+        default:
+            menuLogin.showMenu()
+            userChoice = UserChoiceController().readUserChoice()
+        }
+    }
     
-    if user is AdminUser {
-        print("Ha entrado como admin")
-        menuAdmin = AdminMenuController()
-        menuAdmin?.showMenu()
-        
-    } else if user is RegularUser {
-        print("Ha entrado como user")
-        menuUser = UserMenuController()
-        menuUser?.showMenu()
-        
-        
+    
+    
+    
+    
+    
+    
         
         
         //App().run()
@@ -45,7 +70,7 @@ func main() {
          Logger.consoleUILogger.debug("Mensaje al usuario modo debug")
          */
     }
-}
+
 
 main()
 /*

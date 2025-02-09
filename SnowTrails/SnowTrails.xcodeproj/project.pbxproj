@@ -38,6 +38,8 @@
 				DataSource/Route/RoutesLoader.swift,
 				DataSource/User/UserData.swift,
 				DataSource/User/UserModel.swift,
+				Errors.swift,
+				FunctionToClassify.swift,
 				Services/RoutesServices.swift,
 				Services/UserServices.swift,
 			);

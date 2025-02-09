@@ -9,21 +9,25 @@ import Testing
 
 class MenuControllerTesting {
     
-    @Suite("Number of menus")
-    class NumberOfMenusTests {
+    @Suite("login")
+    class LoginTests {
         
-        var menuController: MenuController?
+        let menuLogin: LoginMenuController
+        
         
         init() {
-            menuController = MenuController()
+            self.menuLogin = LoginMenuController()
         }
-        
-        deinit {
-            menuController = nil
+
+        @Test func inputAdminUserMailAndPassword_ThenReturn1() {
+            let userImput = ("adminuser@keepcoding.es", "Adminuser1") //Falseo de la función
+            
+            #expect(menuLogin.login(mailAndPasword: userImput) is AdminUser, "Se espera que devuelva un tipo AdminUser")
         }
-        
-        @Test func whenCalled_return3() async throws {
-            #expect(menuController!.getNumberOfMenus() == 3, "The number of menus is not 3")
+        @Test func inputRegularUserMailAndPassword_ThenReturn1() {
+            let userImput = ("regularuser@keepcoding.es", "Regularuser1") //Falseo de la función
+            
+            #expect(menuLogin.login(mailAndPasword: userImput) is RegularUser, "Se espera que devuelva un tipo AdminUser")
         }
     }
 }
