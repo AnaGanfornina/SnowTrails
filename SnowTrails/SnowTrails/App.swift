@@ -16,6 +16,6 @@ class App {
     }
     
     func run() {
-        menuController.showLoginMenu()
+        //menuController.showLoginMenu()
     }
 }
