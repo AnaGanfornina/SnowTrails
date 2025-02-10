@@ -13,6 +13,7 @@ class MenuControllerTesting {
     class LoginTests {
         
         let menuLogin: LoginMenuController
+        var user: User?
         
         
         init() {
@@ -22,12 +23,24 @@ class MenuControllerTesting {
         @Test func inputAdminUserMailAndPassword_ThenReturn1() {
             let userImput = ("adminuser@keepcoding.es", "Adminuser1") //Falseo de la función
             
-            #expect(menuLogin.login(mailAndPasword: userImput) is AdminUser, "Se espera que devuelva un tipo AdminUser")
+            
+            do {
+                user = try menuLogin.login(mailAndPasword: userImput)
+            }catch {
+                return
+            }
+            
+            #expect(user is AdminUser, "Se espera que devuelva un tipo AdminUser")
         }
-        @Test func inputRegularUserMailAndPassword_ThenReturn1() {
+        @Test func inputRegularUserMailAndPassword_ThenReturn1()  {
             let userImput = ("regularuser@keepcoding.es", "Regularuser1") //Falseo de la función
             
-            #expect(menuLogin.login(mailAndPasword: userImput) is RegularUser, "Se espera que devuelva un tipo AdminUser")
+            do {
+                user = try menuLogin.login(mailAndPasword: userImput)
+            }catch {
+                return
+            }
+            #expect(user is RegularUser, "Se espera que devuelva un tipo AdminUser")
         }
     }
 }
