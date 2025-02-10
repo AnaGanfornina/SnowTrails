@@ -9,7 +9,8 @@ import Foundation
 struct UserServices {
     func viewAllUsers() -> [User] {
         // Introducir todo el listado de usuarios
-        return []
+     
+        return  UsersLoader(fromData: UserData()).users // Tal y como está, estás devolviendo el UserData original. De modo que luego lo que tienes que hacer es "modificar" el original
     }
     func appendUser(_ user: User) {
         //Añaidr usuario al Data de users

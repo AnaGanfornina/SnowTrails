@@ -38,3 +38,4 @@ class RegularUser: User {
         super.init(name: name, mail: mail, password: password)
     }
 }
+// TODO: Revisar eso: Si miro el código y hay un método que te permite obtener el rol del usuario, el objetivo ya está conseguido.Si además puedes usar eso para algo, pues mejor para ti porque aparte de completar el enunciado has usado la función para algo más

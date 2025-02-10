@@ -22,7 +22,7 @@ class MenuControllerTesting {
 
         @Test func inputAdminUserMailAndPassword_ThenReturn1() {
             let userImput = ("adminuser@keepcoding.es", "Adminuser1") //Falseo de la función
-            
+    
             
             do {
                 user = try menuLogin.login(mailAndPasword: userImput)

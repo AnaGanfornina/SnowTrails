@@ -8,8 +8,8 @@
 import Foundation
 struct RoutesServices {
     func viewAllRoutes() -> [Route] {
-        print ("Aqui te mostraría todas las rutas")
-        return []
+        
+        return RoutesLoader(fromData: RouteData()).routes
     }
     
     func getTheShortesRoute() -> Route? {
@@ -19,6 +19,7 @@ struct RoutesServices {
     }
     
     func appendPointToRoute(point: Point) {
+        //TODO: Por impmplementar
         print ("Aqui se agregara un punto a la ruta")
     }
 }
