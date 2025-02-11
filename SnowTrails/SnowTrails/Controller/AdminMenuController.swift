@@ -31,11 +31,22 @@ class AdminMenuController: MenuController {
     func executeAxtion(option: Int) -> Void {
         switch option {
         case 1:
-            print("Ver todos los usuarios")
+           
             let users = UserServices().viewAllUsers(fromData: userRepository)
-            // Imprimir usuarios // TODO: Ver el formato en el que se imprime, tengo que poder ver el id
-            for item in users {
-                print(item)
+            // Imprimir usuarios // TODO: Ver el formato en el que se imprime
+            for item in users { // TODO: Prueba a mejorar el switch con u let en cada caso
+                switch item {
+                case is AdminUser:
+                    let rol = "Admin"
+                    print("\(rol): \(item.name) --- Email: \(item.mail)")
+                case is RegularUser:
+                    let rol = "Regular User"
+                    print("\(rol): \(item.name) --- Email: \(item.mail)")
+                default:
+                    let rol = "Desconocido"
+                    print("\(rol): \(item.name) --- Email: \(item.mail)")
+                }
+                
             }
         case 2:
             print("Añadir usuario")
@@ -50,7 +61,7 @@ class AdminMenuController: MenuController {
             print("Introduzca la contraseña del usuario: ")
             let password = UserChoiceController().readUserChoice()
             
-            let newUser = User(name: name, mail: mail, password: password)
+            let newUser = RegularUser(name: name, mail: mail, password: password)
             
             UserServices().appendUser(newUser, fromData: userRepository)
             

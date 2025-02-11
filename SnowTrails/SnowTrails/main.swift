@@ -17,6 +17,7 @@ func main() {
     let userRepository = UsersLoader(fromData: UserData())// Cargamos los datos originales
     
     while true {
+        // MARK: - Menu de Inicio
         menu.showMenu()
         // Leer opcion del usuario.
         var userChoice = UserChoiceController().readUserChoice()
@@ -28,6 +29,8 @@ func main() {
         // Mostramos menu de login
         menu = LoginMenuController()
         menu.showMenu()
+        // MARK: - Menu de Login
+        
         // Hacemos Login: Pedimos usuario y contraseña
         guard let mailAndPasswordUnwraped = (menu as? LoginMenuController)?.askForMailAndPassword() else {
             return // TODO: Supongo que aqui lanzaremos un error ? Esto está raro
@@ -38,10 +41,12 @@ func main() {
             
         }catch Errors.userNotFound {
             user = nil
+            menu = MenuController()
         }catch{
             print ("Error inserperado")
             user = nil
         }
+        // MARK: - Menu de Usuario o Admin
         
         // Evaluamos si es admin o regular
         while user is AdminUser {
@@ -54,8 +59,15 @@ func main() {
                 menu = MenuController()
                 break
             }
-            //Ejecutar accion
+            //Ejecutar accion.
             print("Aquí habra ejecutado la acción que queramos")
+            
+            // Convertimos el string de imput en un entero
+            guard let userChoiceInt = Int(userChoice) else {
+                print("Opción no válida")// TODO: Implementar errores
+                return
+            }
+            newMenu.executeAxtion(option: userChoiceInt)
         }
         while user is RegularUser {
             let newMenu = UserMenuController()
@@ -68,8 +80,14 @@ func main() {
                 break
             }
             
-            //Ejecutar accion. Is this a closure?
-            print("Aquí habra ejecutado la acción que queramos")
+            //Ejecutar accion.
+            
+            // Convertimos el string de imput en un entero
+            guard let userChoiceInt = Int(userChoice) else {
+                print("Opción no válida")// TODO: Implementar errores
+                return
+            }
+            newMenu.executeAxtion(option: userChoiceInt)
         }
     }
     

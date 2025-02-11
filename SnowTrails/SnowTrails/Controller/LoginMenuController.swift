@@ -13,7 +13,7 @@ class LoginMenuController: MenuController {
         self.description = "Bienvenido al login\n"
         
     }
-    ///Función qu epide al usuario el mail y la contraseña.
+    ///Función que pide al usuario el mail y la contraseña.
     ///Los retorna en forma de tupla
     func askForMailAndPassword() -> (mail: String, password: String) {
         // Usuario introduce mail y contraseña
@@ -33,7 +33,7 @@ class LoginMenuController: MenuController {
         let userFound = usersData.filter { $0.mail == mail && $0.password == password }
         //Cogeos el primer elemento de la lista de usser encontrado //TODO: Tratamiento de errores si no encuentra el usuario
         guard let userFoundUnwrapped = userFound.first else {
-            print("Usuario no encontrado, vuelvelo a intentar")
+            print("Usuario no encontrado, vuelvelo a intentar\n")
             throw Errors.userNotFound
             
         }

@@ -21,7 +21,7 @@ struct UserServices {
         data.users.append(user)
         
     }
-    func deleteUser(whithID id: Int, fromData data: UsersLoader) {
+    func deleteUser(whithID id: Int, fromData data: UsersLoader) { //TODO: Borrar lo del id y cambiar por nombre
         // Eliminar usuario por  ID
         
         // Buscamos por id
