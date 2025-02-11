@@ -18,12 +18,14 @@ struct UserChoiceController {
         let exitOption: String?
         
         switch menu {
-        case is MenuController:
-            exitOption = "3"
+        
         case is UserMenuController:
             exitOption = "3"
         case is AdminMenuController:
             exitOption = "5"
+            
+        case is MenuController:
+            exitOption = "3"
         }
         return input  == exitOption //añadir aqui algun tipo de closure para imprimir
     }

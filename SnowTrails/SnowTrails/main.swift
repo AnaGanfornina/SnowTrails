@@ -14,6 +14,7 @@ func main() {
     
     var menu = MenuController()
     var user: User?
+    let userRepository = UsersLoader(fromData: UserData())// Cargamos los datos originales
     
     while true {
         menu.showMenu()
@@ -44,12 +45,12 @@ func main() {
         
         // Evaluamos si es admin o regular
         while user is AdminUser {
-            menu = AdminMenuController()
-            menu.showMenu()
+            let newMenu = AdminMenuController(whithRepository: userRepository)
+            newMenu.showMenu()
             //Leer el usuario
             userChoice = UserChoiceController().readUserChoice()
             //Si no es salir...
-            if UserChoiceController().isExit(input: userChoice, menu: menu){
+            if UserChoiceController().isExit(input: userChoice, menu: newMenu){
                 menu = MenuController()
                 break
             }
@@ -57,12 +58,12 @@ func main() {
             print("Aquí habra ejecutado la acción que queramos")
         }
         while user is RegularUser {
-            menu = UserMenuController()
-            menu.showMenu()
+            let newMenu = UserMenuController()
+            newMenu.showMenu()
             //Leer el usuario
             //Si no es salir...
             userChoice = UserChoiceController().readUserChoice()
-            if UserChoiceController().isExit(input: userChoice, menu: menu){
+            if UserChoiceController().isExit(input: userChoice, menu: newMenu){
                 menu = MenuController()
                 break
             }
@@ -72,98 +73,11 @@ func main() {
         }
     }
     
-    
-    // MARK: Opcion 2
-    /*
-    var menu = MenuController()
-    var user: User?
-    // Leer en qué menu se está y mostrar opciones
-    menu.showMenu()
-    // Leer al usuario
-    var userChoice = UserChoiceController().readUserChoice()
-    //Comprobar que la opción no sea salir
-    guard !isExit(input: userChoice) else { return }
-    
-    //Mientras la opción no sea salir, siempre hará login
-    //Casteamos la variable menu para que sea de tipo Login
-     
-     //otra opcion: (menu as? LoginMenuController)?.askForMailAndPassword()
-    if let LoginMenuController = menu as? LoginMenuController {
-        //Aqui tenemos el loginMenu controller
-    }else{
-        
-    }
-  
-    menu.showMenu()
-    menu.
-    
-    let mailAndPassword = menuLogin.askForMailAndPassword()
-    
-    // Tratamos el error de no encontrar un usuario con esa contraseña y usuario
-    do {
-        user = try menuLogin.login(mailAndPasword: mailAndPassword)
-    }catch Errors.userNotFound {
-        user = nil
-    }catch{
-        print ("Error inserperado")
-        user = nil
+   
     }
     
-     */
-   // MARK: Opcion 1
     
-    /*
-    let menuLogin = LoginMenuController()
-    menuLogin.showMenu()
-    
-    //Leer opcion del usuario. Mientras la opción no sea salir, siempre hará login
-    var userChoice = UserChoiceController().readUserChoice()
-    
-    while !isExit(input: userChoice) {
-        
-        let menuAdmin: AdminMenuController?
-        let menuUser: UserMenuController?
-        let user:User?
-        
-        
-        // Mientras la opción no sea de salida, acabaremos en un login
-        // Hacer login del usuario
-        let mailAndPassword = menuLogin.askForMailAndPassword()
-        
-        // Tratamos el error de no encontrar un usuario con esa contraseña y usuario
-        do {
-            user = try menuLogin.login(mailAndPasword: mailAndPassword)
-        }catch Errors.userNotFound {
-            user = nil
-        }catch{
-            print ("Error inserperado")
-            user = nil
-        }
 
-        switch user {
-        case is AdminUser:
-            print("Ha entrado como admin")
-            menuAdmin = AdminMenuController()
-            menuAdmin?.showMenu()
-            
-        case is RegularUser:
-            print("Ha entrado como user")
-            menuUser = UserMenuController()
-            menuUser?.showMenu()
-        default:
-            menuLogin.showMenu()
-            userChoice = UserChoiceController().readUserChoice()
-        }
-     */
-    }
-    
-    
-    
-    
-    
-    
-    
-        
         
         //App().run()
         /*
