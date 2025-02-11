@@ -8,9 +8,12 @@
 import Foundation
 
 class AdminMenuController: MenuController {
-    override init() {
+    let userRepository: UsersLoader
+     init(whithRepository userRepository: UsersLoader) {
+        self.userRepository = userRepository
         super.init()
         self.description =
+        
             """
             
             Menú admin - Selecciona una opción:
@@ -29,8 +32,8 @@ class AdminMenuController: MenuController {
         switch option {
         case 1:
             print("Ver todos los usuarios")
-            let users = UserServices().viewAllUsers()
-            // Imprimir usuarios
+            let users = UserServices().viewAllUsers(fromData: userRepository)
+            // Imprimir usuarios // TODO: Ver el formato en el que se imprime, tengo que poder ver el id
             for item in users {
                 print(item)
             }
@@ -38,17 +41,36 @@ class AdminMenuController: MenuController {
             print("Añadir usuario")
             //Pedir usuario
             
-            UserServices().appendUser(<#T##user: User##User#>)
+            print("Introduzca el nombre del usuario: ")
+            let name = UserChoiceController().readUserChoice()
+            
+            print("Introduzca el correo del usuario: ")
+            let mail = UserChoiceController().readUserChoice()
+            
+            print("Introduzca la contraseña del usuario: ")
+            let password = UserChoiceController().readUserChoice()
+            
+            let newUser = User(name: name, mail: mail, password: password)
+            
+            UserServices().appendUser(newUser, fromData: userRepository)
             
         case 3:
             print("Eliminar usuario")
             // Pedir usuario
-            UserServices().deleteUser(withID: <#T##Int#>)
+            print("Introduzca el ID del usuario:")
+            
+            guard let id = Int(UserChoiceController().readUserChoice()) else {
+                return // TODO: Lanzar algun tipo de error si no se ha podido convertir a número/ o volver a pedir
+            }
+            UserServices().deleteUser(whithID: id, fromData: userRepository)
             
         case 4:
-            print("Añadir punto a una ruta")
             //Pedir un punto
-            RoutesServices().appendPointToRoute(point: <#T##Point#>)
+            print("Introduzca punto a una ruta: ")
+            let point = UserChoiceController().readUserChoice()
+            // Aqui transformar lo que nos da el usuario en un punto
+            let newPoint = Point(name: "Prueba", latitude: 0, longitude: 0, elevation: 0)
+            RoutesServices().appendPointToRoute(point: newPoint)
             
         default:
             print("Opción no válida")

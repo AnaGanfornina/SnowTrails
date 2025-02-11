@@ -7,16 +7,29 @@
 
 import Foundation
 struct UserServices {
-    func viewAllUsers() -> [User] {
+    func viewAllUsers(fromData data: UsersLoader) -> [User] {
         // Introducir todo el listado de usuarios
-     
-        return  UsersLoader(fromData: UserData()).users // Tal y como está, estás devolviendo el UserData original. De modo que luego lo que tienes que hacer es "modificar" el original
+        
+        return  data.users
     }
-    func appendUser(_ user: User) {
+    
+    func appendUser(_ user: User, fromData data: UsersLoader) {
         //Añaidr usuario al Data de users
         //Solo puede añadir usuarios normales
+        
+        // Añadimos el nuevo usuario
+        data.users.append(user)
+        
     }
-    func deleteUser(withID id: Int) {
-        // Eliminar usuario por mail o ID //TODO: Añadir ID a función
+    func deleteUser(whithID id: Int, fromData data: UsersLoader) {
+        // Eliminar usuario por  ID
+        
+        // Buscamos por id
+        
+        
+        data.users.removeAll { User in
+            return User.ID == id
+        } //TODO: Revisa esto, dudo que haya salido bien
+        
     }
 }

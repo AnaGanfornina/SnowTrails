@@ -14,7 +14,7 @@ class User {
     
     
     init(name: String, mail: String, password: String) {
-        self.ID = Int.random(in: 1...100)
+        self.ID = Int.random(in: 1...100) // TODO: Controlar realmente qué ID se pone
         self.name = name
         self.mail = mail
         self.password = password
