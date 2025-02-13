@@ -7,10 +7,25 @@
 
 import Testing
 
-struct CalculateDistanceTesting {
-
-    @Test func <#test function name#>() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+class CalculateDistanceTesting {
+    @Suite("calculateTotalDistanceOfEachRoute")
+    class CalculateDistance{
+        var routeServiceInstance: RoutesServices?
+        var routes: [Route]
+        init() {
+            self.routeServiceInstance = RoutesServices()
+            self.routes = routeServiceInstance!.viewAllRoutes()  // TODO: Desungrapear esto
+        }
+        deinit{
+            routes = []
+            routeServiceInstance = nil
+        }
+        
+        @Test
+        func whenTheNameAndDistanceIsCorrect_thenReturnRutaDelPicoNevadoYLagoHeladoAnd27Km () {
+            #expect(routes[0].name == "Ruta del Pico Nevado y Lago Helado" ,"Se espera que retorne Ruta del Pico Nevado.")
+            #expect(calculateRouteDistance(points: routes[0].points).rounded() == 27.0, "Se espera que retorne 27 Km.")
+        }
     }
 
 }
