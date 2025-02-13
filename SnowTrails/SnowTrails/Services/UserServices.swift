@@ -19,17 +19,18 @@ struct UserServices {
         
         // Añadimos el nuevo usuario
         data.users.append(user)
+        // TODO: Mensaje de que se ha podido añadir satisfactoriamente.
+        // TODO: Lanzar error si no se ha podido lanzar satisfactoriamente
         
     }
-    func deleteUser(whithID id: Int, fromData data: UsersLoader) { //TODO: Borrar lo del id y cambiar por nombre
-        // Eliminar usuario por  ID
+    func deleteUser(_ name: String, fromData data: UsersLoader) { //TODO: Borrar lo del id y cambiar por nombre
         
-        // Buscamos por id
+        // Buscamos por nombre
         
-        
+        // TODO: Introducir mensaje de error  para cuando no encuentre ningun usuario con ese nombre
         data.users.removeAll { User in
-            return User.ID == id
-        } //TODO: Revisa esto, dudo que haya salido bien
+            return User.name == name
+        }
         
     }
 }

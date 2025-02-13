@@ -67,7 +67,7 @@ func main() {
                 print("Opción no válida")// TODO: Implementar errores
                 return
             }
-            newMenu.executeAxtion(option: userChoiceInt)
+            newMenu.executeAction(option: userChoiceInt)
         }
         while user is RegularUser {
             let newMenu = UserMenuController()

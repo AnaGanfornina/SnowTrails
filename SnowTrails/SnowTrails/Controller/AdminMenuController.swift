@@ -26,9 +26,7 @@ class AdminMenuController: MenuController {
             """
         
     }
-    //ESTO ES UNA IDEA FELIZ
-    // TODO: Habrá que hacer que pase de un str a un int
-    func executeAxtion(option: Int) -> Void {
+    func executeAction(option: Int) -> Void {
         switch option {
         case 1:
            
@@ -52,13 +50,13 @@ class AdminMenuController: MenuController {
             print("Añadir usuario")
             //Pedir usuario
             
-            print("Introduzca el nombre del usuario: ")
+            print("Introduce el nombre del usuario que quieres añadir: ")
             let name = UserChoiceController().readUserChoice()
             
-            print("Introduzca el correo del usuario: ")
+            print("Introduce el email del usuario que quieres añadir: ")
             let mail = UserChoiceController().readUserChoice()
             
-            print("Introduzca la contraseña del usuario: ")
+            print("Introduce la contrase~na del usuario que quieres añadir: ")
             let password = UserChoiceController().readUserChoice()
             
             let newUser = RegularUser(name: name, mail: mail, password: password)
@@ -68,12 +66,11 @@ class AdminMenuController: MenuController {
         case 3:
             print("Eliminar usuario")
             // Pedir usuario
-            print("Introduzca el ID del usuario:")
+            print("Introduzca el nombre del usuario:")
             
-            guard let id = Int(UserChoiceController().readUserChoice()) else {
-                return // TODO: Lanzar algun tipo de error si no se ha podido convertir a número/ o volver a pedir
-            }
-            UserServices().deleteUser(whithID: id, fromData: userRepository)
+            let name = UserChoiceController().readUserChoice()
+            
+            UserServices().deleteUser(name, fromData: userRepository)
             
         case 4:
             //Pedir un punto
