@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import OSLog
 
 class LoginMenuController: MenuController {
     override init() {
@@ -31,12 +32,26 @@ class LoginMenuController: MenuController {
         //Buscamos en user data
         let usersData = UserData.getUsers()
         let userFound = usersData.filter { $0.mail == mail && $0.password == password }
-        //Cogeos el primer elemento de la lista de usser encontrado //TODO: Tratamiento de errores si no encuentra el usuario
+        
+        //Cogeos el primer elemento de la lista de usser encontrado
         guard let userFoundUnwrapped = userFound.first else {
-            print("Usuario no encontrado, vuelvelo a intentar\n")
+            Logger.consoleUILogger.error("Usuario no encontrado, vuelvelo a intentar\n")
             throw Errors.userNotFound
             
         }
+        //TODO: Aquí seguro que en un futuro podemos usar un geter
+        
+        switch userFoundUnwrapped{
+        case is AdminUser:
+            Logger.consoleUILogger.info("Ha entrado como administrador") 
+        case is RegularUser:
+            Logger.consoleUILogger.info("Ha entrado como usuario")
+        default:
+            Logger.consoleDeveloperLogger.error("No se reconoce el tipo de usuario")
+        }
+        
+        
+        
         
         return userFoundUnwrapped
     }

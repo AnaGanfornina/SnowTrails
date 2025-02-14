@@ -6,9 +6,17 @@
 //
 
 import Foundation
+import OSLog
 
-class MenuController {
+protocol checkOption {
+    func checkOption(input: String?, options: [String]) throws -> String?
+}
+
+class MenuController: checkOption { // MARK: Realmente no se si es mejor hacer esto con un protocolo o con una herencia el checkOption
+    
+    
     var description: String
+    var choices: [String]
     
     init() {
         self.description =
@@ -19,13 +27,28 @@ class MenuController {
                         3. Salir
                         
                         """
+        self.choices =  ["1","2","3"]
     }
     func showMenu() {
         print(description)
     }
+    /// Función que lanza un error en caso de opcion inválida
+    func checkOption(input: String?, options: [String]) throws -> String? {
+        
+        guard let inputVerified = input else {
+            return nil
+        }
+        if !options.contains(inputVerified) {
+            Logger.consoleDeveloperLogger.debug("Error al validar la opción del usuario")
+            Logger.consoleUILogger.debug("Opcion inválida, por favor intente de nuevo.")
+            throw Errors.invalidOption
+            
+        }
+        return input
+    }
 }
 
-
+//TODO: Lo que quiero es que optons de checkOption tenga un parámetro por defecto . que lanze un error si no es una de las opciones. Y que cada menu tenga sus opciones.
 
 
     

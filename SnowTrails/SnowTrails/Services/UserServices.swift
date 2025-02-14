@@ -6,6 +6,8 @@
 //
 
 import Foundation
+
+
 struct UserServices {
     func viewAllUsers(fromData data: UsersLoader) -> [User] {
         // Introducir todo el listado de usuarios
@@ -19,6 +21,7 @@ struct UserServices {
         
         // Añadimos el nuevo usuario
         data.users.append(user)
+        
         // TODO: Mensaje de que se ha podido añadir satisfactoriamente.
         // TODO: Lanzar error si no se ha podido lanzar satisfactoriamente
         

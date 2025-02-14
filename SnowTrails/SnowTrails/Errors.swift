@@ -8,4 +8,5 @@
 import Foundation
 enum Errors: Error {
     case userNotFound
+    case invalidOption
 }

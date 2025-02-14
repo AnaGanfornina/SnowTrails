@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import OSLog
 
 struct UserChoiceController {
     ///Función que lee el imput del usuario y devuelve un string
@@ -21,13 +22,17 @@ struct UserChoiceController {
         
         case is UserMenuController:
             exitOption = "3"
+            
         case is AdminMenuController:
             exitOption = "5"
             
+            
         case is MenuController:
             exitOption = "3"
+            
+        
         }
-        return input  == exitOption //añadir aqui algun tipo de closure para imprimir
+        return input  == exitOption
     }
     
 }
