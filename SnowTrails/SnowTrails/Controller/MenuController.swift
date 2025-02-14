@@ -12,7 +12,7 @@ protocol checkOption {
     func checkOption(input: String?, options: [String]) throws -> String?
 }
 
-class MenuController: checkOption { // MARK: Realmente no se si es mejor hacer esto con un protocolo o con una herencia el checkOption
+class MenuController: checkOption { // TODO: convertirlo a herencia
     
     
     var description: String

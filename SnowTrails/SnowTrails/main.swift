@@ -83,6 +83,7 @@ func main() {
         
         // Evaluamos si es admin o regular
         while user is AdminUser {
+            // MARK: - Menu de Usuario
             let newMenu = AdminMenuController(whithRepository: userRepository)
             
             newMenu.showMenu()
@@ -118,9 +119,20 @@ func main() {
                 print("Opción no válida")// TODO: Implementar errores
                 return
             }
-            newMenu.executeAction(option: userChoiceInt)
+            
+            do {
+                try newMenu.executeAction(option: userChoiceInt)
+            } catch Errors.duplicateUser {
+                continue
+            } catch Errors.userNotFound {
+                continue
+            }catch {
+                Logger.consoleDeveloperLogger.error("Error inesperado al añadir usuario")
+            }
+            
         }
         while user is RegularUser {
+            // MARK: - Menu de Usuario
             let newMenu = UserMenuController()
             
             newMenu.showMenu()

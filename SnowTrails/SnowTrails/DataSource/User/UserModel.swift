@@ -6,7 +6,11 @@
 //
 
 import Foundation
-class User {
+class User: Equatable {
+    static func == (lhs: User, rhs: User) -> Bool {
+        return lhs.name == rhs.name && lhs.mail == rhs.mail && lhs.password == rhs.password
+    }
+    
     let ID: Int
     let name: String
     let mail: String
@@ -20,6 +24,7 @@ class User {
         self.password = password
         
     }
+    
     
 }
 

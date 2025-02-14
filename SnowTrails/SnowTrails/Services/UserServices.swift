@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import OSLog
 
 struct UserServices {
     func viewAllUsers(fromData data: UsersLoader) -> [User] {
@@ -15,23 +15,34 @@ struct UserServices {
         return  data.users
     }
     
-    func appendUser(_ user: User, fromData data: UsersLoader) {
+    func appendUser(_ user: User, fromData data: UsersLoader) throws {
         //Añaidr usuario al Data de users
         //Solo puede añadir usuarios normales
         
         // Añadimos el nuevo usuario
-        data.users.append(user)
         
-        // TODO: Mensaje de que se ha podido añadir satisfactoriamente.
-        // TODO: Lanzar error si no se ha podido lanzar satisfactoriamente
+        if data.users.contains(user){
+            Logger.consoleUILogger.info("El usuario ya existe")
+            throw Errors.duplicateUser
+            
+        }
+        data.users.append(user)
+        Logger.consoleUILogger.info("Usuario añadido satisfactoriamente")
+    
         
     }
-    func deleteUser(_ name: String, fromData data: UsersLoader) { //TODO: Borrar lo del id y cambiar por nombre
+    func deleteUser(_ name: String, fromData data: UsersLoader) throws {
         
         // Buscamos por nombre
-        
-        // TODO: Introducir mensaje de error  para cuando no encuentre ningun usuario con ese nombre
+        // Si no encuentra ninguno lanza un error
+        if !data.users.contains(where: { $0.name == name }){
+            Logger.consoleUILogger.info("No existe ningun usuario con ese nombre")
+            throw Errors.userNotFound
+            
+        }
+        // Si lo encuentra borra todos aquellos que tengan ese nombre
         data.users.removeAll { User in
+            Logger.consoleUILogger.info("El usuario ha sido eliminado satisfactoriamente")
             return User.name == name
         }
         

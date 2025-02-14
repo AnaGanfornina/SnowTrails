@@ -26,7 +26,7 @@ class AdminMenuController: MenuController {
             """
         
     }
-    func executeAction(option: Int) -> Void {
+    func executeAction(option: Int) throws -> Void {
         switch option {
         case 1:
            
@@ -61,7 +61,7 @@ class AdminMenuController: MenuController {
             
             let newUser = RegularUser(name: name, mail: mail, password: password)
             
-            UserServices().appendUser(newUser, fromData: userRepository)
+            try UserServices().appendUser(newUser, fromData: userRepository)
             
         case 3:
             print("Eliminar usuario")
@@ -70,12 +70,13 @@ class AdminMenuController: MenuController {
             
             let name = UserChoiceController().readUserChoice()
             
-            UserServices().deleteUser(name, fromData: userRepository)
+            try UserServices().deleteUser(name, fromData: userRepository)
             
         case 4:
             //Pedir un punto
             print("Introduzca punto a una ruta: ")
             let point = UserChoiceController().readUserChoice()
+            
             // Aqui transformar lo que nos da el usuario en un punto
             let newPoint = Point(name: "Prueba", latitude: 0, longitude: 0, elevation: 0)
             RoutesServices().appendPointToRoute(point: newPoint)
