@@ -9,12 +9,15 @@ import Foundation
 import OSLog
 
 struct UserServices {
+    /// Función que retorna los usuarios en forma de array, habiendolos obtenido del data introducido por parámetro
     func viewAllUsers(fromData data: UsersLoader) -> [User] {
         // Introducir todo el listado de usuarios
         
         return  data.users
     }
     
+    /// Función que añade el usuario a data.
+    /// Lanza un error en caso de encontrar un usuario igual.
     func appendUser(_ user: User, fromData data: UsersLoader) throws {
         //Añaidr usuario al Data de users
         //Solo puede añadir usuarios normales
@@ -31,6 +34,8 @@ struct UserServices {
     
         
     }
+    /// Función que elimina el usuario mediante el nombre ingresado.
+    /// Lanza un error en caso de no encontrarlo
     func deleteUser(_ name: String, fromData data: UsersLoader) throws {
         
         // Buscamos por nombre

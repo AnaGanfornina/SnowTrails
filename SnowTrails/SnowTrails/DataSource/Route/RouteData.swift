@@ -10,8 +10,9 @@ import Foundation
 struct RouteData {
     static var points = PointsLoader(fromData: PointData()).points
     
+    /// Función estática encargada de devolver la información sobre las rutas
     static func getRouteData() -> [Route] {
-        // MARK: No es buena idea acceder por posicion verdad ?
+        // FIXME: No es buena idea acceder por posicion verdad ?
         return [
             Route(name: "Ruta del Pico Nevado y Lago Helado", points: [points[0], points[2], points[5]]),
             Route(name: "Ruta del Valle Blanco y Refugio Alpino", points: [points[0], points[3], points[9]]),

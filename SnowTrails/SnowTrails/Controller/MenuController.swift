@@ -25,10 +25,14 @@ class MenuController { // TODO: convertirlo a herencia
                         """
         self.choices =  ["1","2","3"]
     }
+    /// Función que imprime la descripción del menu con un logger.
     func showMenu() {
         Logger.consoleUILogger.info("\(self.description)")
     }
-    /// Función que lanza un error en caso de opcion inválida
+    /// Función que recibe un string opcional y el número de opciones.
+    /// En caso de el imput no encontrarse entre las opciones lanza un error.
+    /// En caso de no lanzarse el error retornara el imput. El cual seguirá siendo opcional
+    
     func checkOption(input: String?, options: [String]) throws -> String? {
         
         guard let inputVerified = input else {

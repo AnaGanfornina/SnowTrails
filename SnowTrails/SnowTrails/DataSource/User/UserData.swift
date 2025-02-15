@@ -9,7 +9,7 @@ import Foundation
 
 struct UserData {
     
-    ///Función que contiene la lista de usuarios
+    ///Función que retorna la lista de usuarios
     static func getUsers() -> [User] {
         return [
             AdminUser(name: "Adminuserkeepcoding1", mail: "adminuser@keepcoding.es", password: "Adminuser1"),

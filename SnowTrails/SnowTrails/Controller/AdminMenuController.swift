@@ -27,6 +27,8 @@ class AdminMenuController: MenuController {
             """
         
     }
+    /// Función que recibe un entero y lo evalua. En función del numero recibido ejecutará una acción u otra.
+    /// Lanza errores procedentes de UserServices en las opciones 2 y 3
     func executeAction(option: Int) throws -> Void {
         switch option {
         case 1:

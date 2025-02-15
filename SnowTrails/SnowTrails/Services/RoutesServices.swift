@@ -9,17 +9,19 @@ import Foundation
 import OSLog
 
 struct RoutesServices {
+    ///Función que retorna el array de rutas obtenidas mediante el RoutesLoader
     func viewAllRoutes() -> [Route] {
         
         return RoutesLoader(fromData: RouteData()).routes
     }
     
+    /// Función que retorna la ruta mas córta en caso de encontrarla
     func getTheShortesRoute() -> Route? {
         //TODO: Por impmplementar
         Logger.consoleUILogger.info ("Aqui te mostraría la ruta mas corta")
         return nil
     }
-    
+    /// Función que añade un punto a una de las rutas ya existentes
     func appendPointToRoute(point: Point) {
         //TODO: Por impmplementar
        

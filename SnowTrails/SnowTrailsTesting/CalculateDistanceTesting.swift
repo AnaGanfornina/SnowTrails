@@ -24,7 +24,7 @@ class CalculateDistanceTesting {
         @Test
         func whenTheNameAndDistanceIsCorrect_thenReturnRutaDelPicoNevadoYLagoHeladoAnd27Km () {
             #expect(routes[0].name == "Ruta del Pico Nevado y Lago Helado" ,"Se espera que retorne Ruta del Pico Nevado.")
-            #expect(calculateRouteDistance(points: routes[0].points).rounded() == 27.0, "Se espera que retorne 27 Km.")
+            #expect(routeServiceInstance.calculateRouteDistance(points: routes[0].points).rounded() == 27.0, "Se espera que retorne 27 Km.")
         }
     }
 

@@ -21,6 +21,7 @@ class App {
         self.userRepository = UsersLoader(fromData: UserData())// Cargamos los datos originales
     }
     
+    /// Función encargada de poner en marcha el flujo del programa
     func run() {
     
         while true {

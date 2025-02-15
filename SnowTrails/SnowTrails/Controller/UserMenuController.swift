@@ -21,6 +21,7 @@ class UserMenuController: MenuController {
                     
                     """
     }
+    /// Función que recibe un entero y lo evalua. En función del numero recibido ejecutará una acción u otra.
     func executeAxtion(option: Int) -> Void {
         switch option {
         case 1:
