@@ -18,9 +18,9 @@ class LoginMenuController: MenuController {
     ///Los retorna en forma de tupla
     func askForMailAndPassword() -> (mail: String, password: String) {
         // Usuario introduce mail y contraseña
-        print("Mail: ")
+        Logger.consoleUILogger.info("Mail: ")
         let mail = UserChoiceController().readUserChoice()
-        print("Contraseña: ")
+        Logger.consoleUILogger.info("Contraseña: ")
         let password = UserChoiceController().readUserChoice()
         return (mail, password)
     }

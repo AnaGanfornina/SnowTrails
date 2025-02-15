@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import OSLog
 
 class UserMenuController: MenuController {
     override init() {
@@ -23,22 +24,22 @@ class UserMenuController: MenuController {
     func executeAxtion(option: Int) -> Void {
         switch option {
         case 1:
-            print("Ver todas las rutas")
+            Logger.consoleUILogger.info("Ver todas las rutas")
             let routes = RoutesServices().viewAllRoutes()
             // Imprimir rutas
             for route in routes {
                 
-                print("\(route.name) --- \(RoutesServices().calculateRouteDistance(points: route.points).rounded()) Km" )
+                Logger.consoleUILogger.info("\(route.name) --- \(RoutesServices().calculateRouteDistance(points: route.points).rounded()) Km" )
             }
             
         case 2:
-            print("Obtener la ruta más corta entre dos puntos")
+            Logger.consoleUILogger.info("Obtener la ruta más corta entre dos puntos")
             // TODO: Desmepaquetar y tratar errores de que no se haya encontrado una ruta
             let shortestRoute = RoutesServices().getTheShortesRoute()
-            //print(shortestRoute)
+            //Logger.consoleUILogger.info(shortestRoute)
             
         default:
-            print("Opción no válida")
+            Logger.consoleUILogger.error("Opción no válida")
         }
     }
 }

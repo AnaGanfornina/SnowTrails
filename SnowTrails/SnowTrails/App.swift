@@ -114,7 +114,7 @@ class App {
                 
                 // Convertimos el string de imput en un entero
                 guard let userChoiceInt = Int(userChoiceVerified) else {
-                    print("Opción no válida")// TODO: Implementar errores
+                    Logger.consoleDeveloperLogger.error("No se ha podido transformar a entero la opción")// TODO: Implementar errores
                     return
                 }
                 

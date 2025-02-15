@@ -30,7 +30,7 @@ class MenuController: checkOption { // TODO: convertirlo a herencia
         self.choices =  ["1","2","3"]
     }
     func showMenu() {
-        print(description)
+        Logger.consoleUILogger.info("\(self.description)")
     }
     /// Función que lanza un error en caso de opcion inválida
     func checkOption(input: String?, options: [String]) throws -> String? {

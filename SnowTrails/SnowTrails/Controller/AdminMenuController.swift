@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import OSLog
 
 class AdminMenuController: MenuController {
     let userRepository: UsersLoader
@@ -36,27 +37,27 @@ class AdminMenuController: MenuController {
                 switch item {
                 case is AdminUser:
                     let rol = "Admin"
-                    print("\(rol): \(item.name) --- Email: \(item.mail)")
+                    Logger.consoleUILogger.info("\(rol): \(item.name) --- Email: \(item.mail)")
                 case is RegularUser:
                     let rol = "Regular User"
-                    print("\(rol): \(item.name) --- Email: \(item.mail)")
+                    Logger.consoleUILogger.info("\(rol): \(item.name) --- Email: \(item.mail)")
                 default:
                     let rol = "Desconocido"
-                    print("\(rol): \(item.name) --- Email: \(item.mail)")
+                    Logger.consoleUILogger.error("\(rol): \(item.name) --- Email: \(item.mail)")
                 }
                 
             }
         case 2:
-            print("Añadir usuario")
+            Logger.consoleUILogger.info("Añadir usuario")
             //Pedir usuario
             
-            print("Introduce el nombre del usuario que quieres añadir: ")
+            Logger.consoleUILogger.info("Introduce el nombre del usuario que quieres añadir: ")
             let name = UserChoiceController().readUserChoice()
             
-            print("Introduce el email del usuario que quieres añadir: ")
+            Logger.consoleUILogger.info("Introduce el email del usuario que quieres añadir: ")
             let mail = UserChoiceController().readUserChoice()
             
-            print("Introduce la contrase~na del usuario que quieres añadir: ")
+            Logger.consoleUILogger.info("Introduce la contrase~na del usuario que quieres añadir: ")
             let password = UserChoiceController().readUserChoice()
             
             let newUser = RegularUser(name: name, mail: mail, password: password)
@@ -64,9 +65,9 @@ class AdminMenuController: MenuController {
             try UserServices().appendUser(newUser, fromData: userRepository)
             
         case 3:
-            print("Eliminar usuario")
+            Logger.consoleUILogger.info("Eliminar usuario")
             // Pedir usuario
-            print("Introduzca el nombre del usuario:")
+            Logger.consoleUILogger.info("Introduzca el nombre del usuario:")
             
             let name = UserChoiceController().readUserChoice()
             
@@ -74,7 +75,7 @@ class AdminMenuController: MenuController {
             
         case 4:
             //Pedir un punto
-            print("Introduzca punto a una ruta: ")
+            Logger.consoleUILogger.info("Introduzca punto a una ruta: ")
             let point = UserChoiceController().readUserChoice()
             
             // Aqui transformar lo que nos da el usuario en un punto
@@ -82,7 +83,7 @@ class AdminMenuController: MenuController {
             RoutesServices().appendPointToRoute(point: newPoint)
             
         default:
-            print("Opción no válida")
+            Logger.consoleUILogger.error("Opción no válida")
         }
     }
     

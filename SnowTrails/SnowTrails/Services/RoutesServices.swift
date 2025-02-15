@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import OSLog
+
 struct RoutesServices {
     func viewAllRoutes() -> [Route] {
         
@@ -14,14 +16,14 @@ struct RoutesServices {
     
     func getTheShortesRoute() -> Route? {
         //TODO: Por impmplementar
-        print ("Aqui te mostraría la ruta mas corta")
+        Logger.consoleUILogger.info ("Aqui te mostraría la ruta mas corta")
         return nil
     }
     
     func appendPointToRoute(point: Point) {
         //TODO: Por impmplementar
        
-        print ("Aqui se agregara un punto a la ruta")
+        Logger.consoleUILogger.info ("Aqui se agregara un punto a la ruta")
     }
 }
 
