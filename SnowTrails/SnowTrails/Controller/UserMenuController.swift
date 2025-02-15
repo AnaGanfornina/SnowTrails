@@ -28,7 +28,7 @@ class UserMenuController: MenuController {
             // Imprimir rutas
             for route in routes {
                 
-                print("\(route.name) --- \(calculateRouteDistance(points: route.points).rounded()) Km" )
+                print("\(route.name) --- \(RoutesServices().calculateRouteDistance(points: route.points).rounded()) Km" )
             }
             
         case 2:

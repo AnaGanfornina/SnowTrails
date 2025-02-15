@@ -43,7 +43,6 @@
 				DataSource/User/UserModel.swift,
 				DataSource/User/UsersLoader.swift,
 				Errors.swift,
-				Services/calculateRouteDistance.swift,
 				Services/RoutesServices.swift,
 				Services/UserServices.swift,
 			);
