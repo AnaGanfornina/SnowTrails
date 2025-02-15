@@ -8,11 +8,7 @@
 import Foundation
 import OSLog
 
-protocol checkOption {
-    func checkOption(input: String?, options: [String]) throws -> String?
-}
-
-class MenuController: checkOption { // TODO: convertirlo a herencia
+class MenuController { // TODO: convertirlo a herencia
     
     
     var description: String
@@ -47,8 +43,6 @@ class MenuController: checkOption { // TODO: convertirlo a herencia
         return input
     }
 }
-
-//TODO: Lo que quiero es que optons de checkOption tenga un parámetro por defecto . que lanze un error si no es una de las opciones. Y que cada menu tenga sus opciones.
 
 
     
