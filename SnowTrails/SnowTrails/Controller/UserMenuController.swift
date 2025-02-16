@@ -29,8 +29,10 @@ class UserMenuController: MenuController {
             let routes = RoutesServices().viewAllRoutes()
             // Imprimir rutas
             for route in routes {
+                let distance = RoutesServices().calculateRouteDistance(points: route.points)
+                let roundedDistance = String(format:"%.2f", distance)
                 
-                Logger.consoleUILogger.info("\(route.name) --- \(RoutesServices().calculateRouteDistance(points: route.points).rounded()) Km" )
+                Logger.consoleUILogger.info("\(route.name) --- \(roundedDistance) Km" )
             }
             
         case 2:
