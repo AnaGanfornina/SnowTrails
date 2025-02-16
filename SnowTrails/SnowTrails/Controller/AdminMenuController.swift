@@ -25,6 +25,7 @@ class AdminMenuController: MenuController {
             5. Logout
             
             """
+         self.choices =  ["1","2","3","4","5"]
         
     }
     /// Función que recibe un entero y lo evalua. En función del numero recibido ejecutará una acción u otra.

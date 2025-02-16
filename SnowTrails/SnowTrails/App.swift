@@ -95,7 +95,7 @@ class App {
                 // Comprobamos que sea una opcon válida
                 
                 do {
-                    userChoice = try menu.checkOption(input: userChoice, options: menu.choices)
+                    userChoice = try menu.checkOption(input: userChoice, options: newMenu.choices)
                 } catch Errors.invalidOption {
                     userChoice = nil
                 } catch {
@@ -144,7 +144,7 @@ class App {
                 // Comprobamos que sea una opcon válida
                 
                 do {
-                    userChoice = try menu.checkOption(input: userChoice, options: menu.choices)
+                    userChoice = try menu.checkOption(input: userChoice, options: newMenu.choices)
                 } catch Errors.invalidOption {
                     
                     userChoice = nil
