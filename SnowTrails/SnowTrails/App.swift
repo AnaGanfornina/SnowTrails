@@ -64,7 +64,9 @@ class App {
             
             // Hacemos Login: Pedimos usuario y contraseña
             guard let mailAndPasswordUnwraped = (menu as? LoginMenuController)?.askForMailAndPassword() else {
-                return Logger.consoleDeveloperLogger.debug("Error al leer el usuario y contraseña") // TODO: A DONDE LLEVA ESTO ? CONTINU ?
+                
+                Logger.consoleDeveloperLogger.debug("Error al leer el usuario y contraseña")
+                continue
                 
             }
             // Hacemos login: Tratamos el error de no encontrar un usuario con esa contraseña y usuario
@@ -115,7 +117,7 @@ class App {
                 
                 // Convertimos el string de imput en un entero
                 guard let userChoiceInt = Int(userChoiceVerified) else {
-                    Logger.consoleDeveloperLogger.error("No se ha podido transformar a entero la opción")// TODO: Implementar errores
+                    Logger.consoleDeveloperLogger.error("No se ha podido transformar a entero la opción")// 
                     return
                 }
                 

@@ -19,7 +19,7 @@ struct DataSourceTesting {
         
         init() {
             self.data = PointData()
-            self.pointInstance = PointsLoader(fromData: data!) // TODO: Desungrapear esto
+            self.pointInstance = PointsLoader(fromData: data!)
             self.points = pointInstance.points
         }
         deinit {
@@ -45,7 +45,7 @@ struct DataSourceTesting {
         
         init() {
             self.data = RouteData()
-            self.routeInstance = RoutesLoader(fromData: data!) // TODO: Desungrapear esto
+            self.routeInstance = RoutesLoader(fromData: data!) 
             self.routes = routeInstance.routes
         }
     

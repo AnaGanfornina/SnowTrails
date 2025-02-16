@@ -11,14 +11,13 @@ class User: Equatable {
         return lhs.name == rhs.name && lhs.mail == rhs.mail && lhs.password == rhs.password
     }
     
-    let ID: Int
+    
     let name: String
     let mail: String
-    let password: String //TODO: Esto debería ser privado
+    let password: String
     
     
     init(name: String, mail: String, password: String) {
-        self.ID = Int.random(in: 1...100) // TODO: Controlar realmente qué ID se pone
         self.name = name
         self.mail = mail
         self.password = password
@@ -43,4 +42,3 @@ class RegularUser: User {
         super.init(name: name, mail: mail, password: password)
     }
 }
-// TODO: Revisar eso: Si miro el código y hay un método que te permite obtener el rol del usuario, el objetivo ya está conseguido.Si además puedes usar eso para algo, pues mejor para ti porque aparte de completar el enunciado has usado la función para algo más

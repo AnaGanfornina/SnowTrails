@@ -39,7 +39,6 @@ class LoginMenuController: MenuController {
             throw Errors.userNotFound
             
         }
-        //TODO: Aquí seguro que en un futuro podemos usar un geter
         
         switch userFoundUnwrapped{
         case is AdminUser:

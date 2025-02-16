@@ -8,7 +8,7 @@
 import Foundation
 import OSLog
 
-class MenuController { // TODO: convertirlo a herencia
+class MenuController { 
     
     
     var description: String

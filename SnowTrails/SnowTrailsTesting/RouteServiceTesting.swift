@@ -15,7 +15,7 @@ class RouteServiceTesting {
         var routes: [Route]
         init() {
             self.routeServiceInstance = RoutesServices()
-            self.routes = routeServiceInstance!.viewAllRoutes()  // TODO: Desungrapear esto
+            self.routes = routeServiceInstance!.viewAllRoutes()  
         }
         deinit{
             routes = []

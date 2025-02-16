@@ -27,6 +27,7 @@
 		874A17F72D555CF900FA5A98 /* Exceptions for "SnowTrails" folder in "SnowTrailsTesting" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				App.swift,
 				Controller/AdminMenuController.swift,
 				Controller/LoginMenuController.swift,
 				Controller/MenuController.swift,
@@ -42,7 +43,8 @@
 				DataSource/User/UserData.swift,
 				DataSource/User/UserModel.swift,
 				DataSource/User/UsersLoader.swift,
-				Errors.swift,
+				Errors/UserErrors.swift,
+				main.swift,
 				Services/RoutesServices.swift,
 				Services/UserServices.swift,
 			);

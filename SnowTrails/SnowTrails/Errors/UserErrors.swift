@@ -8,6 +8,10 @@
 import Foundation
 enum Errors: Error {
     case userNotFound
-    case invalidOption
+    case invalidOption // TODO: Cambiarlo a otro error
     case duplicateUser
+    case invalidUserName
+    case invalidUserPassword
+    case invalidUserEmail
 }
+

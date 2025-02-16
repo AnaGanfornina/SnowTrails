@@ -34,8 +34,8 @@ class AdminMenuController: MenuController {
         case 1:
            
             let users = UserServices().viewAllUsers(fromData: userRepository)
-            // Imprimir usuarios // TODO: Ver el formato en el que se imprime
-            for item in users { // TODO: Prueba a mejorar el switch con u let en cada caso
+            // Imprimir usuarios 
+            for item in users { 
                 switch item {
                 case is AdminUser:
                     let rol = "Admin"
@@ -59,12 +59,17 @@ class AdminMenuController: MenuController {
             Logger.consoleUILogger.info("Introduce el email del usuario que quieres añadir: ")
             let mail = UserChoiceController().readUserChoice()
             
-            Logger.consoleUILogger.info("Introduce la contrase~na del usuario que quieres añadir: ")
+            Logger.consoleUILogger.info("Introduce la contraseña del usuario que quieres añadir: ")
             let password = UserChoiceController().readUserChoice()
             
             let newUser = RegularUser(name: name, mail: mail, password: password)
             
-            try UserServices().appendUser(newUser, fromData: userRepository)
+            do {
+                try UserServices().appendUser(newUser, fromData: userRepository)
+            }catch {
+                Logger.consoleUILogger.error("No se ha podido añadir el usuario. Vuelvalo a intentar")
+            }
+            
             
         case 3:
             Logger.consoleUILogger.info("Eliminar usuario")
@@ -72,6 +77,7 @@ class AdminMenuController: MenuController {
             Logger.consoleUILogger.info("Introduzca el nombre del usuario:")
             
             let name = UserChoiceController().readUserChoice()
+            
             
             try UserServices().deleteUser(name, fromData: userRepository)
             

@@ -11,7 +11,7 @@ import OSLog
 struct UserChoiceController {
     ///Función que lee el imput del usuario y devuelve un string
     func readUserChoice() -> String {
-        let userChoice = readLine() ?? "" //TODO: Tratamiento de erores
+        let userChoice = readLine() ?? "" 
         return userChoice
     }
     /// Predicado que evalua un imput para saber si debe o no salir del programa en función del menú en el que se encuentre
