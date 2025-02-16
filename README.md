@@ -13,9 +13,18 @@ SnowTrails es una plataforma intuitiva para que los usuarios puedan acceder fác
 Las funcionalidades completadas pertenecen a la práctica obligatoria, las correspondientes a la parte complementaria están esbozadas pero no implementadas. 
 
 He podido implementar funcionalidades como el login,  visualización de las rutas, añadir y eliminar usuarios  así como la estructura de menus.
+
+
 <img width="357" alt="Captura de pantalla 2025-02-16 a las 13 36 49" src="https://github.com/user-attachments/assets/0fbea971-f521-48c3-b25d-243efa7748b9" />
 
+
 <img width="674" alt="Captura de pantalla 2025-02-16 a las 13 49 41" src="https://github.com/user-attachments/assets/7d188554-f1a0-4290-9252-96d705f4d3f2" />
+
+
+<img width="551" alt="Captura de pantalla 2025-02-16 a las 13 54 02" src="https://github.com/user-attachments/assets/cf7a50bb-9a12-4aa3-9e50-00dc778ab31f" />
+
+
+<img width="728" alt="Captura de pantalla 2025-02-16 a las 13 54 21" src="https://github.com/user-attachments/assets/d2264ccb-1623-4862-89bf-385116d5ebdf" />
 
 
 ## Dificultades.
