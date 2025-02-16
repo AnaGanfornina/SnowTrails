@@ -10,4 +10,14 @@ SnowTrails es una plataforma intuitiva para que los usuarios puedan acceder fác
 
 ## Funcionalidades Completadas
 
-## Puntos Pendientes
+Las funcionalidades completadas pertenecen a la práctica obligatoria, las correspondientes a la parte complementaria están esbozadas pero no implementadas. 
+
+He podido implementar funcionalidades como el login,  visualización de las rutas, añadir y eliminar usuarios  así como la estructura de menus.
+
+## Dificultades.
+
+Las mayores dificultades que he tenido a lo largo de la elaboración han sido las referentes a la estructura y división de responsabilidades. Puesto que me llevó gran parte del tiempo elaborar una estructura para el acceso de datos y que tuviera sentido a la hora de la entrada y salidas de los diferentes menus.
+
+Por otro lado a pesar de que en un principio  no le veía la utilidad, acabé por encontrarle parte del sentido de uso a los Logger.
+
+Por último me gustaría remarcar la importancia que ha tenido en mi proyecto la ayuda de mis compañeros pues sus comentarios y consejos han sido clave para superar todas las dificultades que planteaba el proyecto.
